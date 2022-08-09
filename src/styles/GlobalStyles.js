@@ -30,10 +30,6 @@ const GlobalStyles = createGlobalStyle`
       max-width:1440px;
       margin: 0 auto;
     }
-
-    .homepage {
-    overflow-x: hidden;
-  }
   }
   
 

@@ -186,14 +186,23 @@ const JoinModalStyles = styled.div`
     align-items: center;
 
     p {
-      font-size: 1.25em;
+      font-size: 1em;
       text-align: center;
-      width: 65%;
+      width: 90%;
       margin: 1em 0;
       line-height: 1.5;
+      @media (min-width: 760px) {
+        font-size: 1.25em;
+        width: 65%;
+      }
     }
     button {
-      width: 40%;
+      font-size: 0.875em;
+      width: 70%;
+      @media (min-width: 760px) {
+        width: 40%;
+        font-size: 1em;
+      }
     }
   }
 `;

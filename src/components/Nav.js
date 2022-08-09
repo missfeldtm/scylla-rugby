@@ -19,6 +19,9 @@ const NavbarStyles = styled.nav`
     justify-content: space-between;
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.75);
 
+    .navbar-container {
+      display: none;
+    }
     @media (min-width: 760px) {
       height: calc(66em / 16);
       top: 3em;
@@ -27,6 +30,7 @@ const NavbarStyles = styled.nav`
 
       .navbar-container {
         width: 100%;
+        display: block;
       }
     }
   }

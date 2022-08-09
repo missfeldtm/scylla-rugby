@@ -6,6 +6,7 @@ import JoinModal from './JoinModal';
 
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const HeroStyles = styled.div`
+  width: 100%;
   .hero {
     width: 100%;
     height: calc(455em / 16);

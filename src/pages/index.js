@@ -73,31 +73,55 @@ const HPStyles = styled.div`
       top: 0;
       left: 0;
       z-index: -1;
+
+      &:nth-of-type(2) {
+        display: none;
+      }
+      &:first-of-type {
+        display: block;
+      }
+
+      @media (min-width: 760px) {
+        &:first-of-type {
+          display: none;
+        }
+        &:nth-of-type(2) {
+          display: block;
+        }
+      }
     }
   }
 `;
 // let screenSize =   screenSize = window.innerWidth > 760 ? 1 : 0;
 
+function HeroImgGen({ newImgs }) {
+  return (
+    <>
+      {newImgs.map((img) => (
+        <GatsbyImage
+          image={img.image.asset.gatsbyImage}
+          alt="hero"
+          className="hero-img"
+          key={img.image.asset.filename}
+        />
+      ))}
+    </>
+  );
+}
+
 export default function HomePage({ data }) {
-  const heroImgs = data.allSanityImageDump;
+  const heroImgs = data.allSanityImageDump.nodes;
+  const newImgs = heroImgs.filter((img) =>
+    img.image.asset.filename.includes('hero')
+  );
+  console.log(newImgs);
 
   const sponsors = data.allSanitySponsors.nodes;
 
-  console.log(heroImgs);
   return (
     <HPStyles className="homepage">
       <section className="hero">
-        <GatsbyImage
-          image={heroImgs.nodes[0].image.asset.gatsbyImage}
-          alt="hero"
-          className="hero-img mobile--only"
-        />
-        <GatsbyImage
-          image={heroImgs.nodes[1].image.asset.gatsbyImage}
-          alt="hero"
-          className="hero-img desktop--only"
-        />
-
+        <HeroImgGen key={newImgs} newImgs={newImgs} />
         <div className="hero-box">
           <h2 className="hero-box__heading">Join Our team!</h2>
           <p className="hero-box__subheading">No experience required</p>
@@ -128,6 +152,7 @@ export const query = graphql`
       nodes {
         image {
           asset {
+            filename
             gatsbyImage(layout: FULL_WIDTH, width: 100)
           }
         }

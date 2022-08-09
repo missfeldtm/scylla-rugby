@@ -6,10 +6,13 @@ import Hero from '../components/Hero';
 
 const HPStyles = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &.homepage {
+    overflow-x: hidden;
+  }
 `;
 // let screenSize =   screenSize = window.innerWidth > 760 ? 1 : 0;
 

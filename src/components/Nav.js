@@ -258,15 +258,27 @@ const Menu = ({ open, setOpen }) => (
       </li>
     </ul>
     <div className="nav-social">
-      <a href="#01">
+      <a
+        href="https://www.facebook.com/scyllarugby"
+        target="_blank"
+        rel="noreferrer"
+      >
         <FacebookSVG />
       </a>
 
-      <a href="#01">
+      <a
+        href="https://www.instagram.com/scyllarugby/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <InstagramSVG />
       </a>
 
-      <a href="#01">
+      <a
+        href="https://twitter.com/scyllarugby"
+        target="_blank"
+        rel="noreferrer"
+      >
         <TwitterSVG />
       </a>
     </div>

@@ -49,13 +49,11 @@ const SponsorStyles = styled.div`
 function SingleSponsor({ sponsor }) {
   return (
     <div className="brand-rail__box">
-      <Link to={`/sponsor/${sponsor.id.current}`}>
-        <GatsbyImage
-          image={sponsor.image.asset.gatsbyImage}
-          alt="sponsor"
-          className="brand-rail__img"
-        />
-      </Link>
+      <GatsbyImage
+        image={sponsor.image.asset.gatsbyImage}
+        alt="sponsor"
+        className="brand-rail__img"
+      />
     </div>
   );
 }

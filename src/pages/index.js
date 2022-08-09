@@ -76,14 +76,10 @@ const HPStyles = styled.div`
     }
   }
 `;
-let screenSize;
-let heroImgs;
+// let screenSize =   screenSize = window.innerWidth > 760 ? 1 : 0;
+
 export default function HomePage({ data }) {
-  if (typeof window !== 'undefined') {
-    screenSize = window.innerWidth > 760 ? 1 : 0;
-    heroImgs =
-      data.allSanityImageDump.nodes[screenSize].image.asset.gatsbyImage;
-  }
+  const heroImgs = data.allSanityImageDump;
 
   const sponsors = data.allSanitySponsors.nodes;
 
@@ -91,7 +87,17 @@ export default function HomePage({ data }) {
   return (
     <HPStyles className="homepage">
       <section className="hero">
-        <GatsbyImage image={heroImgs} alt="hero" className="hero-img" />
+        <GatsbyImage
+          image={heroImgs.nodes[0].image.asset.gatsbyImage}
+          alt="hero"
+          className="hero-img mobile--only"
+        />
+        <GatsbyImage
+          image={heroImgs.nodes[1].image.asset.gatsbyImage}
+          alt="hero"
+          className="hero-img desktop--only"
+        />
+
         <div className="hero-box">
           <h2 className="hero-box__heading">Join Our team!</h2>
           <p className="hero-box__subheading">No experience required</p>

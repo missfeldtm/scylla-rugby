@@ -9,10 +9,6 @@ const HPStyles = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &.homepage {
-    overflow-x: hidden;
-  }
 `;
 // let screenSize =   screenSize = window.innerWidth > 760 ? 1 : 0;
 

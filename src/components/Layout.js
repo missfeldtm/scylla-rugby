@@ -5,7 +5,6 @@ import Nav from './Nav';
 import 'normalize.css';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
-import stripes from '../assets/images/stripes.svg';
 
 const SiteBorderStyles = styled.div`
   margin: 0 auto;
@@ -15,6 +14,7 @@ const SiteBorderStyles = styled.div`
 
 const ContentStyles = styled.div`
   /* background-color: var(--black); */
+  overflow-x: hidden;
 `;
 export default function Layout({ children }) {
   return (

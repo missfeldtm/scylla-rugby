@@ -30,8 +30,13 @@ const GlobalStyles = createGlobalStyle`
       max-width:1440px;
       margin: 0 auto;
     }
+
+    .homepage {
+    overflow-x: hidden;
+  }
   }
   
+
 
   /* .gatsby-image-wrapper img[src*=base64\\,] {
     image-rendering: -moz-crisp-edges;

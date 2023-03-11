@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Link as GatsbyLink } from 'gatsby';
-import JoinModal from './JoinModal';
+import HeroImg from './HeroImg';
 
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const HeroStyles = styled.div`
@@ -21,8 +21,8 @@ const HeroStyles = styled.div`
     }
 
     .hero-box {
-      height: calc(217em / 16);
-      width: 93%;
+      height: calc(200em / 16);
+      width: 85%;
       margin: 0 auto;
 
       display: flex;
@@ -61,7 +61,7 @@ const HeroStyles = styled.div`
 
     .hero-img {
       width: 100%;
-      max-width: 1440px;
+      max-width: 1600px;
 
       height: auto;
       position: absolute;
@@ -69,7 +69,7 @@ const HeroStyles = styled.div`
       left: 0;
       z-index: -1;
 
-      &:nth-of-type(2) {
+      /* &:nth-of-type(2) {
         display: none;
       }
       &:first-of-type {
@@ -83,34 +83,50 @@ const HeroStyles = styled.div`
         &:nth-of-type(2) {
           display: block;
         }
+      } */
+    }
+    .hero-box {
+      &__cta {
+        background-color: var(--black);
+        /* width: 100%; */
+        padding: 0.75em 2em;
+        border-radius: 0.5em;
+        border: none;
+
+        @media (min-width: 760px) {
+          padding: 0.75em 2em;
+        }
+      }
+      &__cta p {
+        text-transform: uppercase;
+        font-family: 'Rubik';
+        font-weight: 700;
+        text-align: center;
+        font-size: calc(18em / 16);
+        color: var(--scyllaBlue);
+
+        @media (min-width: 760px) {
+          font-size: 1em;
+        }
       }
     }
   }
 `;
-function HeroImgGen({ newImgs }) {
-  return (
-    <>
-      {newImgs.map((img) => (
-        <GatsbyImage
-          image={img.image.asset.gatsbyImage}
-          alt="hero"
-          className="hero-img"
-          key={img.image.asset.filename}
-        />
-      ))}
-    </>
-  );
-}
 
-export default function HeroImg({ newImgs }) {
+export default function Hero({ hpData }) {
+  const hero = hpData.HeroImage;
+
+  // console.log(heroImg);
   return (
     <HeroStyles>
       <section className="hero">
-        <HeroImgGen key={newImgs} newImgs={newImgs} />
+        <HeroImg hero={hero} />
         <div className="hero-box">
-          <h2 className="hero-box__heading">Join Our team!</h2>
-          <p className="hero-box__subheading">No experience required</p>
-          <JoinModal />
+          <h2 className="hero-box__heading">{hpData.heading}</h2>
+          <p className="hero-box__subheading">{hpData.subheading}</p>
+          <Link to="/joinScylla" className="hero-box__cta">
+            <p>{hpData.button}</p>
+          </Link>
         </div>
       </section>
     </HeroStyles>

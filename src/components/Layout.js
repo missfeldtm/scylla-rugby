@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import Typography from '../styles/Typography';
 import Footer from './Footer';
 import Nav from './Nav';
+
 import 'normalize.css';
 import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
 
 const SiteBorderStyles = styled.div`
   margin: 0 auto;
@@ -23,10 +25,11 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <SiteBorderStyles>
         <ContentStyles>
-          <Nav />
+          <ParallaxProvider>
+            <Nav />
 
-          {children}
-
+            {children}
+          </ParallaxProvider>
           <Footer />
         </ContentStyles>
       </SiteBorderStyles>

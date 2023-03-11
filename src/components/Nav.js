@@ -12,7 +12,7 @@ const NavbarStyles = styled.nav`
   div.navbar {
     position: relative;
     width: 100%;
-    height: 5em;
+    height: 4em;
     background-color: var(--scyllaBlue);
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ const NavbarStyles = styled.nav`
     box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.75);
 
     .navbar-container {
-      display: none;
+      display: flex;
     }
     @media (min-width: 760px) {
       height: calc(66em / 16);
@@ -71,7 +71,7 @@ const StyledMenu = styled.nav`
     .inner {
       position: static;
       width: auto;
-      width: calc(143em / 16);
+      width: calc(100em / 16);
     }
     @media (min-width: 760px) {
       flex-direction: row;
@@ -91,7 +91,7 @@ const StyledMenu = styled.nav`
     flex-direction: column;
     align-content: space-evenly;
     list-style: none;
-    display: none;
+    /* display: none; */
     li {
       margin: 1em 0;
       @media (min-width: 760px) {
@@ -100,7 +100,7 @@ const StyledMenu = styled.nav`
     }
 
     @media (min-width: 760px) {
-      width: 40%;
+      width: 50%;
       flex-direction: row;
       justify-content: space-between;
       padding: 0;
@@ -122,15 +122,17 @@ const StyledMenu = styled.nav`
     a {
       width: 2em;
       padding: 0;
+      margin: 0 0.5em;
     }
     @media (min-width: 760px) {
       width: 10%;
-      margin: 0 1.5em 0 0;
+      margin: 0 1em 0 0;
 
       justify-content: space-between;
 
       a {
         width: 1.625em;
+        margin: inherit;
       }
 
       svg {
@@ -157,10 +159,10 @@ const StyledMenu = styled.nav`
       transition-duration: 0.3s; */
     }
 
-    &:hover {
+    /* &:hover {
       display: inline-block;
-      /* color: var(--yellow); */
-    }
+
+    } */
   }
   div.navbar {
     position: relative;
@@ -169,11 +171,10 @@ const StyledMenu = styled.nav`
 `;
 
 const StyledBurger = styled.button`
-  // position: absolute;
   position: relative;
   top: 5%;
   right: 2rem;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 3rem;
@@ -255,10 +256,10 @@ const Menu = ({ open, setOpen }) => (
         <Link to="/about/">About</Link>
       </li>
       <li>
-        <Link to="/sponsors">sponsors</Link>
+        <Link to="/contact">Officers</Link>
       </li>
       <li>
-        <Link to="/contact">contact</Link>
+        <Link to="/joinScylla">Join Scylla</Link>
       </li>
     </ul>
     <div className="nav-social">
@@ -279,7 +280,7 @@ const Menu = ({ open, setOpen }) => (
       </a>
 
       <a
-        href="https://twitter.com/scyllarugby"
+        href="https://www.tiktok.com/@milwaukeescylla"
         target="_blank"
         rel="noreferrer"
       >

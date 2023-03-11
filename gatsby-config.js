@@ -1,14 +1,15 @@
 // This file is empty, but some people were reporting that it would not start unless they had an empty file. So here it is! You can delete the comment. Or replace it with your favourite shania twain lyrics.
 
+// Initialize dotenv
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
 });
 
 module.exports = {
   siteMetadata: {
-    title: `Scylla Rugby`,
-    siteUrl: 'https://gatsby.rugby',
-    description: 'The best team ever!',
+    title: `WHC Website`,
+    siteUrl: 'https://gatsby.whc',
+    description: 'The best people ever!',
   },
   plugins: [
     {
@@ -27,6 +28,12 @@ module.exports = {
         dataset: 'production',
         watchMode: true,
         token: process.env.SANITY_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.GATSBY_INSTAGRAM_TOKEN,
       },
     },
     `gatsby-plugin-image`,

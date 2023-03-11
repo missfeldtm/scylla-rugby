@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --grey: #efefef;
     --scyllaBlue:#1CBEFF;
-    --scyllaBlueT:rgba(28, 190, 255, .7);
+    --scyllaBlueT:rgba(28, 190, 255, .85);
     --blackT:rgba(17,17,17, .87);
   }
   html {
@@ -25,9 +25,9 @@ const GlobalStyles = createGlobalStyle`
     @media (min-width: 760px) {
       font-size:1.111vw;
     }
-    @media (min-width: 1440px) {
+    @media (min-width: 1600px) {
       font-size:16px;
-      max-width:1440px;
+      max-width:1600px;
       margin: 0 auto;
     }
   }

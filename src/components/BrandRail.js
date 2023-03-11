@@ -32,28 +32,30 @@ const SponsorStyles = styled.div`
     }
   }
   .brand-rail__box {
-    width: 28%;
+    width: 40%;
     margin: 0 0 0.5em;
     @media (min-width: 760px) {
       width: 13%;
     }
   }
-  .brand-rail__box:last-of-type {
+  /* .brand-rail__box:last-of-type {
     width: 22%;
     @media (min-width: 760px) {
       width: 10%;
     }
-  }
+  } */
 `;
 
 function SingleSponsor({ sponsor }) {
   return (
     <div className="brand-rail__box">
-      <GatsbyImage
-        image={sponsor.image.asset.gatsbyImage}
-        alt="sponsor"
-        className="brand-rail__img"
-      />
+      <a href="#01" target="_blank">
+        <GatsbyImage
+          image={sponsor.image.asset.gatsbyImage}
+          alt="sponsor"
+          className="brand-rail__img"
+        />
+      </a>
     </div>
   );
 }
@@ -64,8 +66,8 @@ export default function BrandRail({ sponsors }) {
       <SponsorStyles>
         <section className="brand-rail">
           <h2 className="brand-rail__heading">Proud Sponsors:</h2>
-          {sponsors.map((sponsor) => (
-            <SingleSponsor key={sponsor.id} sponsor={sponsor} />
+          {sponsors.map((sponsor, x) => (
+            <SingleSponsor key={x} sponsor={sponsor} />
           ))}
         </section>
       </SponsorStyles>

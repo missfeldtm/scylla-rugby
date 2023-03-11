@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
 import styled from 'styled-components';
+import { useForm, ValidationError } from '@formspree/react';
 
 const FormStyles = styled.section`
   display: flex;
@@ -12,19 +13,19 @@ const FormStyles = styled.section`
   border-radius: 0.25em;
   margin: 0;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-  width: 90%;
+  width: 86%;
   @media (min-width: 760px) {
-    width: 100%;
+    width: 40%;
   }
 
   .scylla-form__heading {
-    margin: 0 0 1em;
+    margin: 0 0 0.5em;
     align-self: flex-start;
     font-size: 1.75em;
     color: var(--black);
     text-transform: uppercase;
     @media (min-width: 760px) {
-      font-size: calc(50em / 16);
+      font-size: calc(42em / 16);
     }
   }
   .scylla-form__field {
@@ -35,7 +36,7 @@ const FormStyles = styled.section`
   }
 
   .scylla-form__wrapper {
-    width: 90%;
+    width: 80%;
     @media (min-width: 760px) {
       width: 80%;
     }
@@ -49,7 +50,7 @@ const FormStyles = styled.section`
     color: var(--black);
     margin-bottom: 0.5em;
     @media (min-width: 760px) {
-      font-size: 1em;
+      font-size: 0.875em;
     }
   }
 
@@ -117,7 +118,42 @@ const FormStyles = styled.section`
   }
 `;
 
-export default function ContactForm() {
+function FormField({ field, state }) {
+  return (
+    <div className="scylla-form__field">
+      <label htmlFor={field.slug.current} className="scylla-form__label">
+        <span>{field.fieldLabel}:</span>
+
+        {field.fieldType === 'string' ? (
+          <input
+            type={field.slug.current}
+            name={field.slug.current}
+            required
+            className="scylla-form__input"
+            placeholder={field.placeholder}
+          />
+        ) : (
+          <textarea
+            rows="10"
+            id={field.slug.current}
+            name={field.slug.current}
+            required
+            className="scylla-form__input"
+            placeholder="Tell Us a bit about yourself"
+          />
+        )}
+
+        <ValidationError
+          prefix={field.slug.current}
+          field={field.slug.current}
+          errors={state.errors}
+        />
+      </label>
+    </div>
+  );
+}
+
+export default function Form({ formData, formHeading }) {
   const [state, handleSubmit] = useForm('xvoypjbe');
 
   if (state.succeeded) {
@@ -134,8 +170,28 @@ export default function ContactForm() {
   return (
     <FormStyles>
       <div className="scylla-form__wrapper">
-        <h2 className="scylla-form__heading">Join Scylla</h2>
+        <h2 className="scylla-form__heading">{formHeading}</h2>
         <form onSubmit={handleSubmit}>
+          {formData.map((field, x) => (
+            <FormField key={x} field={field} state={state} />
+          ))}
+
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className="scylla-form__button"
+          >
+            Submit
+          </button>
+          <ValidationError errors={state.errors} />
+        </form>
+      </div>
+    </FormStyles>
+  );
+}
+
+/*
+
           <div className="scylla-form__field">
             <label htmlFor="name" className="scylla-form__label">
               <span>Name:</span>
@@ -160,7 +216,6 @@ export default function ContactForm() {
               />
             </label>
           </div>
-
           <div className="scylla-form__field">
             <label htmlFor="email" className="scylla-form__label">
               <span>Email:</span>
@@ -198,16 +253,6 @@ export default function ContactForm() {
             </label>
           </div>
 
-          <button
-            type="submit"
-            disabled={state.submitting}
-            className="scylla-form__button"
-          >
-            Submit
-          </button>
-          <ValidationError errors={state.errors} />
-        </form>
-      </div>
-    </FormStyles>
-  );
-}
+
+
+*/

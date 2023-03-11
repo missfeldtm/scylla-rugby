@@ -5,25 +5,37 @@ import { Link as GatsbyLink } from 'gatsby';
 
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const OfficerCardStyles = styled.div`
-  width: 100vw;
   .officer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     /* align-items: center; */
+    @media (min-width: 760px) {
+      width: 95%;
+      margin: 0 auto;
+    }
   }
   .officer-card {
     width: 45%;
     margin: 1em 0;
+    @media (min-width: 760px) {
+      width: 28%;
+    }
     h3 {
       color: #fff;
       font-size: 0.875em;
       font-family: 'Rubik';
       margin: 0.75em 0 0;
       line-height: 1;
+      @media (min-width: 760px) {
+        font-size: calc(28em / 16);
+      }
     }
     p {
       font-size: calc(12em / 16);
+      @media (min-width: 760px) {
+        font-size: calc(22em / 16);
+      }
     }
     &__tags {
       display: flex;
@@ -38,6 +50,14 @@ const OfficerCardStyles = styled.div`
         white-space: nowrap;
         &:last-child {
           display: none;
+        }
+
+        @media (min-width: 760px) {
+          font-size: calc(12em / 16);
+
+          &:last-child {
+            display: inherit;
+          }
         }
       }
     }
@@ -68,23 +88,26 @@ function SingleOfficer({ officer }) {
       <h3>{officer.name}</h3>
       <p>{officer.position}</p>
       <div className="officer-card__tags">
-        {officer.Tags.map((tag) => (
-          <p>{tag}</p>
+        {officer.tags.map((tag, x) => (
+          <p key={x}>{tag}</p>
         ))}
       </div>
       <a href={mailTo + officer.email} target="_blank" rel="noreferrer">
-        Contact Me
+        Contact
       </a>
     </div>
   );
 }
 
-export default function BrandRail({ officers }) {
+export default function OfficerPanel({ od }) {
+  // console.log(od.slice(0, 8));
+  const odArr = od.slice(0, 8);
+
   return (
     <div>
       <OfficerCardStyles>
         <section className="officer">
-          {officers.map((officer) => (
+          {odArr.map((officer) => (
             <SingleOfficer key={officer.position} officer={officer} />
           ))}
         </section>

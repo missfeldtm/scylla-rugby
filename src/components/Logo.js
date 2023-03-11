@@ -8,8 +8,8 @@ const LogoStyles = styled.div`
     position: relative;
     z-index: 6;
     left: 2rem;
-    top: 2em;
-    width: 6.25em;
+    top: 1.65em;
+    width: 5.25em;
 
     svg {
       width: 100%;

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import '@fontsource/rubik/700.css';
 import '@fontsource/rubik/400.css';
+import '@fontsource/rubik/300.css';
 import '@fontsource/roboto-mono';
 import '@fontsource/roboto-mono/600.css';
 

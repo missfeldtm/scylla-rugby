@@ -264,7 +264,7 @@ const Modal = ({ open, setOpen }) => (
   </JoinModalStyles>
 );
 
-const OpenBTN = ({ open, setOpen }) => (
+const OpenBTN = ({ open, setOpen, hpData }) => (
   <button
     onClick={() => setOpen(!open)}
     onKeyDown={() => setOpen(!open)}
@@ -272,17 +272,17 @@ const OpenBTN = ({ open, setOpen }) => (
     type="button"
     className="hero-box__cta"
   >
-    <p>Play Rugby</p>
+    <p>{hpData.button}</p>
   </button>
 );
 
-export default function JoinModal() {
+export default function JoinModal({ hpData }) {
   const [open, setOpen] = React.useState(false);
   const node = React.useRef();
   return (
     <div ref={node}>
       <JoinBTN>
-        <OpenBTN open={open} setOpen={setOpen} />
+        <OpenBTN open={open} setOpen={setOpen} hpData={hpData} />
 
         <Modal open={open} setOpen={setOpen} />
       </JoinBTN>

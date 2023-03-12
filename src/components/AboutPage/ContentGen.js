@@ -93,7 +93,6 @@ function Paragraphs({ section }) {
   );
 }
 export default function ContentGen({ apContent }) {
-  // console.log(apContent);
   return (
     <ContentStyles>
       {apContent.map((section) => (

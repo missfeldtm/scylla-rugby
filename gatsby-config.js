@@ -30,12 +30,12 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
       },
     },
-    // {
-    //   resolve: `gatsby-source-instagram-all`,
-    //   options: {
-    //     access_token: process.env.GATSBY_INSTAGRAM_TOKEN,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.INSTAGRAM_TOKEN,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

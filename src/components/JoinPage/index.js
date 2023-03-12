@@ -18,7 +18,7 @@ const JoinContainer = styled.div`
   }
   .join-block {
     margin: 1em auto 2em;
-
+    text-shadow: 0.1em 0.1em 0.1em rgb(0 0 0 / 75%);
     p {
       text-align: center;
       @media (min-width: 760px) {

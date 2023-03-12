@@ -56,8 +56,9 @@ const ContactStyles = styled.div`
     }
   }
   .hero-img {
+    width: 100%;
     @media (min-width: 760px) {
-      width: 100%;
+    
       max-width: 1600px;
 
       height: auto;

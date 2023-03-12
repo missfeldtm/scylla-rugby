@@ -76,7 +76,7 @@ const ContactStyles = styled.div`
 // }
 
 export default function ContactPage({ data }) {
-  const officer = data.allSanityOfficer.nodes;
+  // const officer = data.allSanityOfficer.nodes;
   const oData = data.allSanityOfficerPage.edges[0].node;
   const officerData = oData.officers;
 
@@ -95,79 +95,48 @@ export default function ContactPage({ data }) {
           <h2>{oData.header}</h2>
           <h3>{oData.subHeader}</h3>
         </div>
-        <OfficerCard officers={officer} od={officerData} />
+        <OfficerCard  od={officerData} />
       </div>
     </ContactStyles>
   );
 }
 
 export const query1 = graphql`
+
   query OfficerQuery {
-    allSanityOfficer(sort: { fields: [_createdAt], order: ASC }) {
-      nodes {
-        name
-        position
-        email
-        tags
-        image {
-          asset {
-            gatsbyImage(width: 100, layout: FULL_WIDTH)
+  allSanityOfficerPage {
+    edges {
+      node {
+        header
+        subHeader
+        HeroImage {
+          desktopHero {
+            asset {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+              url
+            }
+          }
+          mobileHero {
+            asset {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+              url
+            }
           }
         }
-      }
-    }
-    allSanityImageDump {
-      nodes {
-        image {
-          asset {
-            filename
-            gatsbyImage(layout: CONSTRAINED, width: 100, placeholder: BLURRED)
-          }
-        }
-      }
-    }
-
-    allSanityOfficerPage {
-      edges {
-        node {
-          header
-          subHeader
-          HeroImage {
-            desktopHero {
-              asset {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-
-                  placeholder: BLURRED
-                )
-                url
-              }
-            }
-            mobileHero {
-              asset {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-
-                  placeholder: BLURRED
-                )
-                url
-              }
+        officers {
+          name
+          position
+          tags
+          email
+          image {
+            asset {
+              gatsbyImage(layout: FULL_WIDTH, width: 100)
             }
           }
-          officers {
-            name
-            position
-            tags
-            email
-            image {
-              asset {
-                gatsbyImage(layout: FULL_WIDTH, width: 100)
-              }
-            }
-            _key
-          }
+          _key
         }
       }
     }
   }
+}
 `;

@@ -83,6 +83,7 @@ const ContentStyles = styled.section`
   }
 `;
 function Paragraphs({ section }) {
+
   return (
     <>
       {section.map((para, x) => (
@@ -96,19 +97,23 @@ export default function ContentGen({ apContent }) {
   return (
     <ContentStyles>
       {apContent.map((section) => (
+        section._type !== null ? 
         <div className="about-block" key={section._key}>
           <GatsbyImage
             image={section.image.asset.gatsbyImage}
             alt="hero"
             className="about-block__img"
           />
-
           <div className="about-block__copy">
             <h2>{section.pTitle}</h2>
             {section.subheading !== null ? <h3>{section.subheading}</h3> : null}
             <Paragraphs section={section.paragraphs} />
           </div>
         </div>
+
+        :
+
+        null
       ))}
     </ContentStyles>
   );

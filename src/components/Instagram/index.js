@@ -177,7 +177,6 @@ export default function Instagram({ socialBG, instaData }) {
   // console.log(instaData);
   const galleryArr = instaData.slice(0, 16);
   const bgImg = socialBG.mobileHero.asset.url;
-  console.log(socialBG.mobileHero.asset.url);
   return (
     <ParallaxBanner
       layers={[

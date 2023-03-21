@@ -10,9 +10,5 @@ export default function HeroImg({ hero }) {
     browserWidth = window.innerWidth;
   }
   const heroImg = browserWidth >= 768 ? heroLG : heroSM;
-  return (
-    <>
-      <GatsbyImage image={heroImg} alt="hero" className="hero-img" />
-    </>
-  );
+  return <GatsbyImage image={heroImg} alt="hero" className="hero-img" />;
 }

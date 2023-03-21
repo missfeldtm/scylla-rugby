@@ -84,7 +84,6 @@ const JoinContainer = styled.div`
 `;
 
 export default function JoinContent({ data }) {
-  console.log(data);
   const hero = data.HeroImage;
 
   return (

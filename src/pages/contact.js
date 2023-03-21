@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import OfficerCard from '../components/OfficerCard';
 import HeroImg from '../components/HeroImg';
 
@@ -58,9 +57,7 @@ const ContactStyles = styled.div`
   .hero-img {
     width: 100%;
     @media (min-width: 760px) {
-    
       max-width: 1600px;
-
       height: auto;
       position: absolute;
       top: -11%;
@@ -96,48 +93,48 @@ export default function ContactPage({ data }) {
           <h2>{oData.header}</h2>
           <h3>{oData.subHeader}</h3>
         </div>
-        <OfficerCard  od={officerData} />
+        <OfficerCard od={officerData} />
       </div>
     </ContactStyles>
   );
 }
 
 export const query1 = graphql`
-
   query OfficerQuery {
-  allSanityOfficerPage {
-    edges {
-      node {
-        header
-        subHeader
-        HeroImage {
-          desktopHero {
-            asset {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-              url
+    allSanityOfficerPage {
+      edges {
+        node {
+          header
+          subHeader
+          HeroImage {
+            desktopHero {
+              asset {
+                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+                url
+              }
+            }
+            mobileHero {
+              asset {
+                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+                url
+              }
             }
           }
-          mobileHero {
-            asset {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-              url
+          officers {
+            _type
+            name
+            position
+            tags
+            email
+            image {
+              asset {
+                gatsbyImage(layout: FULL_WIDTH, width: 100)
+              }
             }
+            _key
           }
-        }
-        officers {
-          name
-          position
-          tags
-          email
-          image {
-            asset {
-              gatsbyImage(layout: FULL_WIDTH, width: 100)
-            }
-          }
-          _key
         }
       }
     }
   }
-}
 `;

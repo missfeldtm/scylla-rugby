@@ -100,16 +100,15 @@ function SingleOfficer({ officer }) {
 }
 
 export default function OfficerPanel({ od }) {
-  // console.log(od.slice(0, 8));
-  const odArr = od.slice(0, 8);
-
   return (
     <div>
       <OfficerCardStyles>
         <section className="officer">
-          {odArr.map((officer) => (
-            <SingleOfficer key={officer.position} officer={officer} />
-          ))}
+          {od.map((officer, x) =>
+            officer._type !== null ? (
+              <SingleOfficer key={x} officer={officer} />
+            ) : null
+          )}
         </section>
       </OfficerCardStyles>
     </div>

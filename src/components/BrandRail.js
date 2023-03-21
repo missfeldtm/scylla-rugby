@@ -47,9 +47,10 @@ const SponsorStyles = styled.div`
 `;
 
 function SingleSponsor({ sponsor }) {
+  // console.log(sponsor);
   return (
     <div className="brand-rail__box">
-      <a href="#01" target="_blank">
+      <a href={sponsor.sponsorLink} target="_blank" rel="noreferrer">
         <GatsbyImage
           image={sponsor.image.asset.gatsbyImage}
           alt="sponsor"

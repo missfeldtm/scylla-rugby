@@ -7,9 +7,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `WHC Website`,
-    siteUrl: 'https://gatsby.whc',
-    description: 'The best people ever!',
+    title: `Milwaukee Scylla Women's Rugby`,
+    siteUrl: 'https://gatsby.scylla',
+    description: 'Competitive Rugby Team in Milwaukee WI',
   },
   plugins: [
     {

@@ -94,8 +94,12 @@ const StyledMenu = styled.nav`
     /* display: none; */
     li {
       margin: 1em 0;
+
       @media (min-width: 760px) {
         margin: 0;
+      }
+      &:last-child a {
+        color: var(--yellow);
       }
     }
 
@@ -142,15 +146,16 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 1.25em;
+    font-size: 1.125em;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.075em;
     color: #0d0c1d;
     text-decoration: none;
     transition: color 0.4s linear;
     font-family: 'Rubik';
+    font-weight: 500;
 
     @media (min-width: 640px) {
       text-align: center;
@@ -260,6 +265,15 @@ const Menu = ({ open, setOpen }) => (
       </li>
       <li>
         <Link to="/joinScylla">Join Scylla</Link>
+      </li>
+      <li>
+        <a
+          href="https://stores.inksoft.com/milwaukeescyllarugby"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Scylla Store
+        </a>
       </li>
     </ul>
     <div className="nav-social">

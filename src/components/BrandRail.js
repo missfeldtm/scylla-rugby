@@ -62,6 +62,7 @@ function SingleSponsor({ sponsor }) {
 }
 
 export default function BrandRail({ sponsors }) {
+  console.log(sponsors);
   return (
     <div>
       <SponsorStyles>

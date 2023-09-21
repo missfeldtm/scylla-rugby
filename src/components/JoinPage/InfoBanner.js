@@ -16,6 +16,9 @@ const BannerStyles = styled.section`
   h2 {
     text-transform: uppercase;
     text-align: center;
+    @media (min-width: 760px) {
+      margin: 0 auto 1em;
+    }
   }
 
   .banner-checklist {
@@ -25,6 +28,9 @@ const BannerStyles = styled.section`
     align-items: center;
     flex-wrap: wrap;
 
+    @media (min-width: 760px) {
+      margin: 0 auto;
+    }
     .banner-checklist__box {
       /* width: 45%; */
       display: flex;
@@ -40,6 +46,9 @@ const BannerStyles = styled.section`
       font-size: 0.75em;
       color: var(--black);
       margin-left: 0.5em;
+      @media (min-width: 760px) {
+        font-size: 1.25em;
+      }
     }
   }
 
@@ -73,9 +82,6 @@ export default function InfoBanner() {
             <Checkbox /> <p>Active Clothing</p>
           </div>
         </div>
-        <a href="#01" className="banner-link">
-          New to rugby? Click here to learn more!
-        </a>
       </div>
     </BannerStyles>
   );

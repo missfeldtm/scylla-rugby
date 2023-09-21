@@ -14,7 +14,7 @@ const JoinContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: calc(750em / 16);
+    height: 45.875em;
   }
   .join-block {
     margin: 1em auto 2em;
@@ -33,7 +33,9 @@ const JoinContainer = styled.div`
       margin: 0;
     }
   }
-
+  textarea {
+    height: 4em;
+  }
   .join-block__heading {
     color: var(--white);
     text-transform: uppercase;

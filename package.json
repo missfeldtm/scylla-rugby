@@ -47,7 +47,7 @@
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-source-formspree": "^0.0.2",
     "gatsby-source-instagram-all": "^5.2.4",
-    "gatsby-source-sanity": "^7.1.0",
+    "gatsby-source-sanity": "^7.9.1",
     "gatsby-transformer-sharp": "^5.7.0",
     "isomorphic-fetch": "^3.0.0",
     "netlify-cli": "^13.1.2",
@@ -60,7 +60,8 @@
     "react-helmet": "^6.1.0",
     "react-scroll-parallax": "^3.3.2",
     "sass": "^1.54.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "uri-js": "^4.2.2"
   },
   "devDependencies": {
     "@types/react-dom": "^18.0.11",

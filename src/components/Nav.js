@@ -98,9 +98,6 @@ const StyledMenu = styled.nav`
       @media (min-width: 760px) {
         margin: 0;
       }
-      &:last-child a {
-        color: var(--yellow);
-      }
     }
 
     @media (min-width: 760px) {

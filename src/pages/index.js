@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import BrandRail from '../components/BrandRail';
 import Hero from '../components/Hero';
 import Instagram from '../components/Instagram';
+import CoachMu from '../components/CoachMu';
 
 const HPStyles = styled.div`
   width: 100%;
@@ -27,6 +28,7 @@ export default function HomePage({ data }) {
   return (
     <HPStyles className="homepage">
       <Hero hpData={hpData} />
+      <CoachMu />
       <BrandRail sponsors={sponsors} />
       <Instagram socialBG={socialBG} instaData={instaData} />
     </HPStyles>

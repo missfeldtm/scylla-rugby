@@ -121,13 +121,13 @@ const FormStyles = styled.section`
 function FormField({ field, state }) {
   return (
     <div className="scylla-form__field">
-      <label htmlFor={field.name} className="scylla-form__label">
+      <label htmlFor={field.slug.current} className="scylla-form__label">
         <span>{field.fieldLabel}:</span>
 
         {field.fieldType === 'string' ? (
           <input
-            type={field.name}
-            name={field.name}
+            type={field.slug.current}
+            name={field.slug.current}
             required
             className="scylla-form__input"
             placeholder={field.placeholder}
@@ -135,8 +135,8 @@ function FormField({ field, state }) {
         ) : (
           <textarea
             rows="10"
-            id={field.name}
-            name={field.name}
+            id={field.slug.current}
+            name={field.slug.current}
             required
             className="scylla-form__input"
             placeholder="Tell Us a bit about yourself"
@@ -144,8 +144,8 @@ function FormField({ field, state }) {
         )}
 
         <ValidationError
-          prefix={field.name}
-          field={field.name}
+          prefix={field.slug.current}
+          field={field.slug.current}
           errors={state.errors}
         />
       </label>

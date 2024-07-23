@@ -39,6 +39,8 @@ const JoinStyles = styled.div`
 export default function JoinScylla({ data }) {
   return (
     <JoinStyles>
+
+
       <JoinPage data={data.allSanityInquiryPage.edges[0].node} />
       <InfoBanner />
     </JoinStyles>

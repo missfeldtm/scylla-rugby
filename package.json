@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.22.10",
     "@fontsource/roboto-mono": "^4.5.7",
     "@fontsource/rubik": "^4.5.10",
-    "@formspree/react": "^2.3.0",
+    "@formspree/react": "^2.5.1",
     "babel-plugin-styled-components": "^2.1.4",
     "dotenv": "^16.0.3",
     "gatsby": "^5.7.0",
@@ -65,6 +65,7 @@
   },
   "devDependencies": {
     "@types/react-dom": "^18.0.11",
+    "ajv": "^7.2.4",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^8.36.0",

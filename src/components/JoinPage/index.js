@@ -91,6 +91,8 @@ export default function JoinContent({ data }) {
   return (
     <JoinContainer>
       <HeroImg hero={hero} />
+
+      
       <div className="join-block">
         <h2 className="join-block__heading">{data.header}</h2>
         <p>{data.subHeader}</p>

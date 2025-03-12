@@ -22,7 +22,7 @@ export default function HomePage({ data }) {
   // const socialBG = socialQueryBG[0].image.asset.url;
   // console.log(socialBG);
   // console.log(data.allInstagramContent.edges);
-  const instaData = data.allInstagramContent.edges;
+  // const instaData = data.allInstagramContent.edges;
   const socialBG = hpData.instaBG;
 
   return (
@@ -30,7 +30,7 @@ export default function HomePage({ data }) {
       <Hero hpData={hpData} />
       <CoachMu />
       <BrandRail sponsors={sponsors} />
-      <Instagram socialBG={socialBG} instaData={instaData} />
+      
     </HPStyles>
   );
 }
@@ -107,28 +107,28 @@ export const query = graphql`
       }
     }
 
-    allInstagramContent {
-      edges {
-        node {
-          permalink
-          timestamp(fromNow: true)
-          caption
-          media_url
-          localFile {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-            }
-          }
-          album {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-              }
-            }
-          }
-        }
-      }
-    }
+    # allInstagramContent {
+    #   edges {
+    #     node {
+    #       permalink
+    #       timestamp(fromNow: true)
+    #       caption
+    #       media_url
+    #       localFile {
+    #         childImageSharp {
+    #           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    #         }
+    #       }
+    #       album {
+    #         localFile {
+    #           childImageSharp {
+    #             gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;
 
@@ -138,3 +138,4 @@ export const query = graphql`
 //   `?fields=id,media_type,permalink,children,media_url,caption&limit=16&${process.env.REACT_APP_INS_TOKEN}`
 // );
 // console.log(response);
+// <Instagram socialBG={socialBG} instaData={instaData} />

@@ -28,9 +28,8 @@ export default function HomePage({ data }) {
   return (
     <HPStyles className="homepage">
       <Hero hpData={hpData} />
-      <CoachMu />
       <BrandRail sponsors={sponsors} />
-      
+      <CoachMu />
     </HPStyles>
   );
 }
